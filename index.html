@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="uz">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PERFECT EDUCATION | IT SCHOOL</title>
+  <meta name="description"
+    content="PERFECT EDUCATION | IT SCHOOL | COURSES | LEARNING | STUDENTS" />
+  <!-- Bootstrap 5 & Icons (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --yellow: #ffc400;
+      /* biroz boyroq sariq */
+      --yellow-2: #ffe680;
+      --black: #0a0a0a;
+      --gray-1: #f5f5f5;
+      --gray-2: #888888;
+      --white: #ffffff;
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--black), #111);
+      color: var(--white);
+    }
+
+    p {
+      color: #dcdcdc;
+    }
+
+    /* p lar yumshoq oq kulrang */
+
+    /* PORTFOLIO */
+    .port-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .1);
+      background: linear-gradient(180deg, #151515, #101010);
+      transition: transform .3s ease, box-shadow .3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .port-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .6);
+      border-color: var(--yellow);
+    }
+
+    .port-thumb {
+      aspect-ratio: 16/10;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .port-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 212, 0, .2);
+      color: var(--yellow);
+      border: 1px solid rgba(255, 212, 0, .35);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+
+    .port-content {
+      padding: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .port-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    .port-desc {
+      font-size: .9rem;
+      color: #bfbfbf;
+      margin-bottom: 12px;
+    }
+
+    .port-link {
+      text-decoration: none;
+      color: var(--yellow);
+      font-weight: 600;
+      font-size: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .25s ease;
+    }
+
+    .port-link:hover {
+      color: #ffe34d;
+    }
+
+    /* Global */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 80% 10%, rgba(255, 212, 0, .12), transparent 60%),
+        radial-gradient(1000px 800px at 0% 100%, rgba(255, 212, 0, .10), transparent 60%),
+        linear-gradient(180deg, var(--black), #0e0e0e 60%, #111);
+      color: var(--white);
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-light {
+      background: #0f0f0f;
+    }
+
+    /* Navbar */
+    .navbar {
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, .55) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .navbar .navbar-brand {
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yellow);
+      display: inline-block;
+      margin-left: 6px;
+      box-shadow: 0 0 0 4px rgba(255, 212, 0, .2);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 6px;
+      height: 2px;
+      background: var(--yellow);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: linear-gradient(#000, rgba(0, 0, 0, .4));
+      opacity: .7;
+    }
+
+    .hero .badge {
+      background: rgba(255, 212, 0, .12);
+      color: var(--yellow);
+      border: 1px solid rgba(255, 212, 0, .35);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+    }
+
+    .hero-title .hl {
+      color: var(--yellow);
+      text-shadow: 0 0 32px rgba(255, 212, 0, .25);
+    }
+
+    .lead {
+      color: #d7d7d7;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #151515, #101010);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .04);
+    }
+
+    .spark {
+      width: 140px;
+      height: 140px;
+      position: absolute;
+      right: -20px;
+      top: -20px;
+      background: radial-gradient(circle at 30% 30%, var(--yellow), transparent 60%);
+      filter: blur(24px);
+      opacity: .55;
+    }
+
+    .btn-ylw {
+      --bs-btn-padding-y: .7rem;
+      --bs-btn-padding-x: 1.1rem;
+      --bs-btn-font-weight: 700;
+      border-radius: 12px;
+      background: var(--yellow);
+      color: #111;
+      border: none;
+    }
+
+    .btn-ylw:hover {
+      background: #ffdf44;
+      color: #111;
+    }
+
+    .btn-ghost {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      color: #f1f1f1;
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, .35);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    /* Feature cards */
+    .feature-card {
+      background: linear-gradient(180deg, #121212, #0f0f0f);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 18px;
+      padding: 22px;
+      height: 100%;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .4);
+    }
+
+    .icon-pill {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(255, 212, 0, .14);
+      border: 1px solid rgba(255, 212, 0, .4);
+    }
+
+
+    /* Stats */
+    .stat {
+      text-align: center;
+      padding: 22px;
+      border: 1px dashed rgba(255, 255, 255, .13);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #121212, #0c0c0c);
+    }
+
+    .stat .num {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--yellow);
+    }
+
+    .stat .txt {
+      color: #ffffff;
+    }
+
+    /* Bizning kurslar */
+    .port-card {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: #101010;
+    }
+
+    .port-thumb {
+      aspect-ratio: 16/10;
+      display: grid;
+      place-items: center;
+      background: repeating-linear-gradient(45deg, #1a1a1a 0 14px, #131313 14px 28px);
+      position: relative;
+    }
+
+    .port-thumb svg {
+      opacity: .9;
+    }
+
+    .port-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 212, 0, .16);
+      color: var(--yellow);
+      border: 1px solid rgba(255, 212, 0, .35);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: .8rem;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      background: linear-gradient(180deg, #101010, #0d0d0d);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      padding: 22px;
+      height: 100%;
+    }
+  
+  
+    /* Footer */
+    footer {
+      background: #0c0c0c;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    /* Back-to-top */
+    .to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
+      display: none;
+      z-index: 999;
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: all .6s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    p {
+      color: #FFD700;
+      /* sariq */
+    }
+.btn-glow {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #ffd700;
+  color: #000;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease-in-out;
+  animation: glowPulse 2s infinite;
+}
+.btn-glow:hover {
+  background: #ffea00;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.9);
+  transform: scale(1.05);
+  color: #000;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 15px rgba(255,215,0,.6), 0 0 40px rgba(255,215,0,.4); }
+  50% { box-shadow: 0 0 25px rgba(255,215,0,1), 0 0 70px rgba(255,215,0,.8); }
+  100% { box-shadow: 0 0 15px rgba(255,215,0,.6), 0 0 40px rgba(255,215,0,.4); }
+}
+
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <span>PERFECT EDUCATION</span><span class="brand-dot"></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Bosh sahifa</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Bizning kurslar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Aloqa</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero section">
+    <div class="hero-grid"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <span class="badge rounded-pill mb-3 px-3 py-2"><i class="bi bi-star-fill me-1"></i> PERFECT EDUCATION</span>
+          <h1 class="hero-title mb-3 reveal">Sifatli <span class="hl">Ta'lim</span>, Zamonaviy <span
+              class="hl">Yondashuv</span>.</h1>
+          <p class="lead mb-4 reveal" style="max-width:56ch">PERFECT EDUCATION — Maktab va IT ta’lim markazi. Bizda Ingliz tili, Matematika, IT va boshqa premium kurslar mavjud. </p>
+          <div class="d-flex gap-3 reveal">
+            <a href="#contact" class="btn btn-ylw"><i class="bi bi-bag-check-fill me-2"></i> Boglanish</a>
+            <a href="#portfolio" class="btn btn-ghost"><i class="bi bi-play-circle me-2"></i> Kurslarni korish</a>
+          </div>
+          <div class="d-flex align-items-center gap-4 mt-4 reveal">
+            <div class="d-flex align-items-center"><i class="bi bi-shield-check text-warning me-2"></i>Yuqori xafsizlik</div>
+            <div class="d-flex align-items-center"><i class="bi bi-rocket-takeoff text-warning me-2"></i>Profisanal daraja
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-card position-relative reveal">
+            <div class="spark"></div>
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="text-uppercase text-muted small">Dashboard</div>
+                <div class="fw-bold">Real-time ko‘rsatkichlar</div>
+              </div>
+              <span class="badge rounded-pill text-dark" style="background:var(--yellow)"><i
+                  class="bi bi-activity me-1"></i>Live</span>
+            </div>
+            <hr class="border-secondary" />
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="stat h-100">
+                  <div class="num" data-count="128" data-suffix="%">0</div>
+                  <div class="txt">Konversiya</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat h-100">
+                  <div class="num" data-count="4.8" data-decimals="1">0</div>
+                  <div class="txt">Reyting</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="p-3 rounded-4 border border-secondary-subtle"
+                  style="background:linear-gradient(180deg,#151515,#101010)">
+                  <div class="d-flex justify-content-between align-items-center mb-2"><span
+                      class="text-muted small">Trafik</span><span class="small">So‘nggi 7 kun</span></div>
+                  <svg viewBox="0 0 300 100" width="100%" height="80">
+                    <polyline fill="none" stroke="currentColor" stroke-width="2"
+                      points="0,90 30,80 60,85 90,60 120,65 150,40 180,45 210,30 240,35 270,25 300,30" />
+                    <defs>
+                      <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stop-color="rgba(255,212,0,.6)" />
+                        <stop offset="100%" stop-color="rgba(255,212,0,0)" />
+                      </linearGradient>
+                    </defs>
+                    <polygon
+                      points="0,90 30,80 60,85 90,60 120,65 150,40 180,45 210,30 240,35 270,25 300,30 300,100 0,100"
+                      fill="url(#g1)" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- PORTFOLIO -->
+
+
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Bizning kurslar</h2>
+        <p class="text-muted">Eng ommabop va zamonaviy kurslarimiz.</p>
+      </div>
+      <div class="row g-4" id="portfolioList"></div>
+    </div>
+  </section>
+  <!-- Bizning kurslar Modal -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="projectTitle">Project Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" id="projectImage" class="img-fluid rounded mb-3" alt="">
+          <p id="projectDesc"></p>
+        </div>
+        <div class="modal-footer border-0">
+          <a  class="btn btn-warning text-dark fw-bold">Koproq korish</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+<section id="contact" class="py-5" style="background:#0d0d0d;">
+  <div class="container text-center text-light">
+    <h5 class="text-warning mb-5 fw-bold">Biz bilan bog‘laning</h5>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Email -->
+      <div class="col-md-3">
+        <div class="contact-card p-4 h-100">
+          <i class="bi bi-telegram fs-2 text-warning mb-3"></i>
+          <p class="mb-0">@PERFECT_EDUCATIOON</p>
+        </div>
+      </div>
+
+      <!-- Telefon -->
+      <div class="col-md-3">
+        <div class="contact-card p-4 h-100">
+          <i class="bi bi-telephone fs-2 text-warning mb-3"></i>
+          <p class="mb-0">+998 91 121 23 99</p>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="col-md-3">
+        <div class="contact-card p-4 h-100">
+          <i class="bi bi-geo-alt fs-2 text-warning mb-3"></i>
+          <p class="mb-0">Rishtan, Fergana, O‘zbekiston</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tugmalar -->
+    <div class="mt-5 d-flex flex-wrap justify-content-center gap-3">
+      <a href="https://t.me/PERFECT_EDUCATIOON" class="btn-pro">
+        <i class="bi bi-envelope-fill me-1"></i> Kanal
+      </a>
+      <a href="tel:+998911212399" class="btn-pro-outline">
+        <i class="bi bi-telephone-fill me-1"></i> Qo‘ng‘iroq
+      </a>
+      <a href="https://t.me/PERFECT_EDUCATIION" target="_blank" class="btn-pro">
+        <i class="bi bi-telegram me-1"></i> Telegram
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-card {
+    background:linear-gradient(180deg,#1a1a1a,#111);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    transition:0.3s;
+  }
+  .contact-card:hover {
+    transform:translateY(-6px);
+    border-color:rgba(250,204,21,0.4);
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  .btn-pro {
+    padding:12px 28px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#facc15,#eab308);
+    color:#111;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .btn-pro:hover {
+    background:linear-gradient(135deg,#fde047,#facc15);
+    transform:translateY(-2px);
+    box-shadow:0 4px 14px rgba(250,204,21,0.4);
+  }
+
+  .btn-pro-outline {
+    padding:12px 28px;
+    border-radius:40px;
+    background:transparent;
+    border:2px solid #facc15;
+    color:#facc15;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  .btn-pro-outline:hover {
+    background:#facc15;
+    color:#111;
+    transform:translateY(-2px);
+    box-shadow:0 4px 14px rgba(250,204,21,0.4);
+  }
+</style>
+
+
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div class="small text-muted">© <span id="year"></span> PERFECT EDUCATION. Barcha huquqlar himoyalangan.</div>
+      <div class="d-flex gap-3">
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-muted text-decoration-none"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="btn btn-ylw to-top" id="toTop" aria-label="Tepaga qaytish"><i class="bi bi-arrow-up"></i></button>
+
+  <!-- Toast -->
+  <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1080;">
+    <div id="liveToast" class="toast align-items-center text-bg-dark border-0" role="status" aria-live="polite"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body"><i class="bi bi-check2-circle text-warning me-2"></i> Xabaringiz yuborildi (namuna).
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Yopish"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ==== Year ====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ==== Reveal on scroll ====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ==== Counters ====
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.count || '0');
+      const decimals = parseInt(el.dataset.decimals || '0');
+      const suffix = el.dataset.suffix || '';
+      const duration = 1200;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min(1, (now - start) / duration);
+        const val = (target * p).toFixed(decimals);
+        el.textContent = val + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    document.querySelectorAll('.num').forEach(animateCounter);
+
+    // ==== Back to top ====
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.style.display = window.scrollY > 600 ? 'inline-flex' : 'none';
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ==== Contact toast demo ====
+    function showToast() {
+      const t = new bootstrap.Toast(document.getElementById('liveToast'));
+      t.show();
+    }
+    window.showToast = showToast;
+
+    // ==== Bizning kurslar Projects ====
+    const projects = [
+    {
+  title: "Biologiya",
+  desc: "Organizm, hujayra va tirik tabiat qonuniyatlarini o‘rganamiz.",
+  img: "image.png",
+  badge: "Fan",
+  link: "#"
+},
+{
+  title: "Kimyo",
+  desc: "Moddalar tarkibi, reaksiyalar va amaliy tajribalar bilan o‘rganing.",
+  img: "image1.png",
+  badge: "Fan",
+  link: "#"
+},
+{
+  title: "Ona tili",
+  desc: "Grammatika, nutq madaniyati va yozma savodxonlikni rivojlantiring.",
+  img: "image2.png",
+  badge: "Fan",
+  link: "#"
+},
+{
+  title: "Tarix",
+  desc: "Jahon va O‘zbekiston tarixi, imtihonlarga tayyorlov darslari.",
+  img: "image3.png",
+  badge: "Fan",
+  link: "#"
+},
+{
+  title: "Matematika",
+  desc: "Arifmetika, algebra, geometriya va olimpiada tayyorlov kursi.",
+  img: "image4.png",
+  badge: "Fan",
+  link: "#"
+},
+{
+  title: "Ingliz tili",
+  desc: "Speaking, listening va IELTS imtihonlariga tayyorlov.",
+  img: "image5.png",
+  badge: "Language",
+  link: "#"
+},
+{
+  title: "Frontend",
+  desc: "HTML, CSS va JavaScript yordamida zamonaviy saytlar yarating.",
+  img: "image6.png",
+  badge: "IT",
+  link: "#"
+},
+{
+  title: "Grafik Dizayn",
+  desc: "Photoshop, Illustrator va Figma orqali professional dizayn yarating.",
+  img: "image7.png",
+  badge: "IT",
+  link: "#"
+},
+{
+  title: "Kompyuter savodxonligi",
+  desc: "Kompyuterdan samarali foydalanish va ofis dasturlarini o‘rganing.",
+  img: "image8.png",
+  badge: "IT",
+  link: "#"
+}
+
+];
+
+    const portfolioList = document.getElementById("portfolioList");
+
+    // Dinamik cardlarni yaratish
+    projects.forEach((p, i) => {
+      const col = document.createElement("div");
+      col.className = "col-md-6 col-lg-4 reveal";
+      col.innerHTML = `
+      <div class="port-card h-100 d-flex flex-column">
+        <div class="port-thumb">
+          <span class="port-badge">${p.badge}</span>
+          <img src="${p.img}" class="img-fluid" alt="${p.title}">
+        </div>
+        <div class="port-content flex-grow-1 d-flex flex-column justify-content-between">
+          <div>
+            <div class="port-title">${p.title}</div>
+            <div class="port-desc">${p.desc}</div>
+          </div>
+          <a href="javascript:void(0)" class="port-link" data-index="${i}" data-bs-toggle="modal" data-bs-target="#projectModal">
+            View Project <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    `;
+      portfolioList.appendChild(col);
+      observer.observe(col); // har bir yangi elementni kuzatishga ulaymiz
+    });
+
+    // ==== Modalga ma'lumot chiqarish ====
+    const modalTitle = document.getElementById("projectTitle");
+    const modalImg = document.getElementById("projectImage");
+    const modalDesc = document.getElementById("projectDesc");
+    const modalLink = document.getElementById("projectLink");
+
+    portfolioList.addEventListener("click", (e) => {
+      const link = e.target.closest(".port-link");
+      if (link) {
+        const i = link.dataset.index;
+        const p = projects[i];
+        modalTitle.textContent = p.title;
+        modalImg.src = p.img;
+        modalImg.alt = p.title;
+        modalDesc.textContent = p.desc;
+        modalLink.href = p.link;
+      }
+    });
+  </script>
+
+</body>
+
+</html>
